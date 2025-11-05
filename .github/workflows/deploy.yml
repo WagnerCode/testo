@@ -1,0 +1,16 @@
+name: Deploy
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+
+
+jobs:
+  deploy_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to ${{ inputs.environment }}
+        run: echo "Деплой в ${inputs.environment} среду"
