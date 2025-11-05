@@ -12,5 +12,7 @@ jobs:
   deploy_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to ${{ inputs.environment }}
-        run: echo "Деплой в ${inputs.environment} среду"
+      - name: Deploy to environment
+        run: echo "Деплой в $ENV среду"
+        env:
+          ENV: ${{ inputs.environment }}
